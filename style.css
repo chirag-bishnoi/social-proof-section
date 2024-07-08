@@ -1,0 +1,236 @@
+@font-face {
+    font-family: 'League Spartan';
+    src: local('League Spartan'),
+         local('LeagueSpartan'),
+         url('assets/fonts/LeagueSpartan-Regular.woff2') format('woff2'),
+         url('assets/fonts/LeagueSpartan-Regular.woff')  format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: local('League Spartan'),
+         local('LeagueSpartan'),
+         url('assets/fonts/LeagueSpartan-Medium.woff2') format('woff2'),
+         url('assets/fonts/LeagueSpartan-Medium.woff')  format('woff');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'League Spartan';
+    src: local('League Spartan'),
+         local('LeagueSpartan'),
+         url('assets/fonts/LeagueSpartan-Bold.woff2') format('woff2'),
+         url('assets/fonts/LeagueSpartan-Bold.woff')  format('woff');
+    font-weight: 700;
+}
+
+
+:root {
+    --Magenta:hsl(300, 43%, 22%);
+    --Pink:hsl(333, 80%, 67%);
+    --Dark-Gray-Magenta:hsl(303, 10%, 53%);
+    --Light-Gray:hsl(300, 24%, 96%);
+    --White:#fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'League Spartan' , sans-serif;
+    min-height: 100vh;
+
+    /*IMAGE*/
+    background-image: url(assets/images/bg-pattern-top-desktop.svg), url(assets/images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+}
+
+main {
+    margin-top: 5rem;
+    width: 80%;
+    max-width: 1400px;
+    margin-inline: auto;
+}
+
+@media (max-width: 810px){
+    main {
+        margin-bottom: 4rem;
+    }
+}
+
+/* TOP SECTION*/
+
+.flex_container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+}
+
+@media (min-width:640px){
+.flex_container {
+    gap: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+}
+}
+
+.heading p {
+    color: var(--Dark-Gray-Magenta);
+    font-size: 1.25rem;
+    max-width: 40ch;
+}
+
+.title {
+    font-size: 3.3rem;
+    color: var(--Magenta);
+    font-weight: 700;
+    line-height: 1;
+    max-width: 12ch;
+    margin-bottom: 1.2rem;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heading, .reviews {
+    flex: 1;
+}
+
+.review {
+    background-color: var(--Light-Gray);
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 10px;
+    margin-inline: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.review:nth-of-type(even){
+    margin-block: 1rem;
+}
+
+@media (min-width:520px){
+    .review {
+        flex-direction: row;
+        gap: 1.4rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 27rem;
+    }
+}
+
+@media (min-width:640px){
+    .review {
+        gap: 0.5rem;
+    }
+}
+@media (min-width:949px){
+    .review {
+        gap: 1.4rem;
+    }
+}
+
+@media (min-width:987px){
+    .review {
+        flex-wrap: nowrap;
+    }
+}
+
+@media(min-width:1070px){
+    .review:nth-of-type(1){
+    transform: translateX(-3rem);
+}
+.review:nth-of-type(3){
+    transform: translateX(3rem);
+}
+}
+
+.review p {
+    color: var(--Magenta);
+}
+
+/* BOTTOM SECTION */
+
+.comments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.comment {
+    background-color: var(--Magenta);
+    color: var(--White);
+    font-size: 0.938rem;
+    padding-inline: 2rem;
+    padding-block: 3rem;
+    border-radius: 10px;
+}
+
+@media (min-width: 980px){
+    .comment:nth-of-type(2){
+        transform: translateY(1rem);
+    }
+    .comment:nth-of-type(3){
+        transform: translateY(2rem);
+    }
+}
+
+.comment__header {
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+    font-size: 1.1rem;
+}
+
+.comment img {
+    border-radius: 50%;
+    width: 40px;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.status {
+    color: var(--Pink);
+}
+
+.quote {
+    margin-top: 1.2rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+
+/* SOME MINOR SETTINGS */
+
+@media (max-width:639px){
+
+    body {
+        background-image: url(assets/images/bg-pattern-top-mobile.svg), url(assets/images/bg-pattern-bottom-mobile.svg);
+    }
+
+    .heading {
+        text-align: center;
+    }
+    .title {
+        margin-inline: auto;
+    }
+    .comments {
+        gap: 1rem;
+    }
+}
+
